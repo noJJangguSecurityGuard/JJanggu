@@ -19,14 +19,17 @@ public class S11724 {
         //int start = Integer.parseInt(st.nextToken());
 
         list = new ArrayList[node+1];
-        visited = new boolean[node+1];
+        visited = new boolean[node+1]; // 초기값은 false
         
-        // 인접리스트 초기화
-        for(int i=1;i<edge+1;i++){
+    
+        
+        // 인접리스트 초기화  노드수 만큼, 1부터시작
+        for(int i=1;i<node+1;i++){
             list[i] = new ArrayList<Integer>();
         }
-        // 인접리스트 만들기 무방향
-        for(int i=0;i<edge;i++){
+        
+        // 인접리스트 만들기 무방향 
+        for(int i=0;i<edge;i++){ // 간선 수 만큼
             
             st=new StringTokenizer(br.readLine());
             int u = Integer.parseInt(st.nextToken());
@@ -51,7 +54,8 @@ public class S11724 {
     }
 
     static void DFS(int index){
-        if(visited[index]) {
+
+        if(visited[index]) {  // 방문했으면(true) 나가기
             return;
         }
 
