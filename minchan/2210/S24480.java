@@ -8,7 +8,7 @@ import java.util.Collections;
 // 원래 bufferedWriter를 썼는데 
 // 메소드가 다른영역이라 System.out 사용함
 
-public class S24479{
+public class S24480{
 
     // static영역에 저장
     static ArrayList<Integer>[] list;
@@ -46,9 +46,9 @@ public class S24479{
             list[v].add(u);
         }
 
-        //dfs 안에 sort를 넣으니 시간이 오래걸렸다 -> list를 만들고나서 넣기
-        for(int i=1;i<node+1;i++){
-            Collections.sort(list[start]); // 오름차순정렬
+        // dfs 밖에서 sort
+        for(int i=1; i<node+1;i++){
+            Collections.sort(list[i], Collections.reverseOrder()); // 내림차순
         }
         
 
